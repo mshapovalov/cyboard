@@ -20,8 +20,8 @@
 &kp LCTRL  &kp A      &kp S     &kp D     &kp F      &kp G                       &kp H       &kp J          &kp K      &kp L     &kp SEMI      &kp SQT
 &kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                       &kp N       &kp M          &kp COMMA  &kp DOT   &kp FSLH      &kp RSHFT
 &kp LEFT   &kp RIGHT  &kp LGUI  &kp LALT  &kp GRAVE                                          &kp RIGHT_ALT  &kp LBKT   &kp RBKT  &kp UP_ARROW  &kp DOWN
-                                          &mkp LCLK  &kp INS    &kp ESCAPE       &kp DELETE  &kp BSPC       &kp ENTER
-                                          &mkp RCLK  &kp RCTRL  &kp RIGHT_ALT    &kp CAPS    &mo 1          &kp SPACE
+                                          &mkp LCLK  &kp INS    &kp ESCAPE       &kp DELETE  &kp BSPC       &kp SPACE
+                                          &mkp RCLK  &kp RCTRL  &kp RIGHT_ALT    &kp CAPS    &mo 1          &kp ENTER
             >;
         };
 
@@ -89,10 +89,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
