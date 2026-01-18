@@ -54,17 +54,36 @@
 
         left_alt {
             bindings = <&kp LEFT_ALT>;
-            key-positions = <37 38>;
+            key-positions = <38 39>;
         };
 
         right_alt {
             bindings = <&kp LEFT_ALT>;
-            key-positions = <46 45>;
+            key-positions = <45 44>;
         };
 
         win {
             bindings = <&kp LEFT_WIN>;
             key-positions = <70 75>;
+        };
+
+        control_alt_left {
+            bindings = <&control_alt>;
+            key-positions = <40 39 38>;
+        };
+
+        control_alt_right {
+            bindings = <&control_alt>;
+            key-positions = <43 44 45>;
+        };
+    };
+
+    macros {
+        control_alt: control_alt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp LEFT_ALT>;
+            label = "CONTROL_ALT";
         };
     };
 
@@ -148,10 +167,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 1 24>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
