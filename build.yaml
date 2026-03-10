@@ -18,7 +18,7 @@
 #
 ---
 include:
-  - board: assimilator-bt//zmk
+  - board: assimilator-bt/nrf52840
     shield: imprint_left
-  - board: assimilator-bt//zmk
+  - board: assimilator-bt/nrf52840
     shield: imprint_right
