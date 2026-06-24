@@ -91,6 +91,11 @@
             bindings = <&kp LEFT_WIN>;
             key-positions = <55 56 57>;
         };
+
+        f_layer {
+            bindings = <&mo 5>;
+            key-positions = <70 75>;
+        };
     };
 
     macros {
@@ -169,6 +174,19 @@
                                 &kp N7  &kp N8  &kp N9    &kp N0  &kp N1  &kp N2
             >;
         };
+
+        F_layer {
+            bindings = <
+&trans   &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans   &trans
+&trans   &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans   &trans
+&kp F12  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F11  &kp F11
+&trans   &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans   &trans
+&trans   &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans   &trans
+&trans   &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans   &trans
+                                 &trans  &trans  &trans    &trans  &trans  &trans
+                                 &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
     };
 };
 
@@ -182,10 +200,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 1 24>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
